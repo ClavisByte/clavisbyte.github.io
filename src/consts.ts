@@ -18,7 +18,23 @@ export const SERVER_URL = "https://clavisbyte.link";
 // Menu items for navigation
 export const menuItems = [
   { id: "home", text: "Home", href: "/", svg: "home", target: "_self" }, // Home page
-  { id: "about", text: "About", href: "/about", svg: "about", target: "_self" }, // About page
+  /*{ id: "about", text: "About", href: "/about", svg: "about", target: "_self" },*/ // About page
+  {
+    id: "about",
+    text: "About",
+    href: "/about",
+    svg: "about",
+    target: "_self",
+    subItems: [
+      /*{
+        id: "all",
+        text: "All blogs",
+        href: "/blog",
+        svg: "post",
+        target: "_self",
+      },*/ // All blog
+    ],
+  },
   /*{
     id: "blog",
     text: "Blogs",
