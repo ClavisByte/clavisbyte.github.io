@@ -80,8 +80,8 @@ const pageLinks = generatePageLinks(totalPages);
     <a
       href={page.url.prev || "'#'"}
       class={page.url.prev
-        ? `btn bg-base-100 shadow-xl`
-        : `btn btn-disabled bg-base-100 shadow-xl`}
+        ? `btn bg-base-100 border-2`
+        : `btn btn-disabled bg-base-100 border-2`}
     >
       <svg
         class="h-6 w-6 fill-current md:h-8 md:w-8"
@@ -109,7 +109,7 @@ const pageLinks = generatePageLinks(totalPages);
                   >
                     ...
                   </div>
-                  <ul class="menu dropdown-content bg-base-100 rounded-box z-[100] p-2 shadow-xl">
+                  <ul class="menu dropdown-content bg-base-100 rounded-box z-[100] p-2 border-2">
                     {pageLinks.hidden.map((hidden) => (
                       <li>
                         <a
@@ -165,8 +165,8 @@ const pageLinks = generatePageLinks(totalPages);
     <a
       href={page.url.next || "'#'"}
       class={page.url.next
-        ? `btn bg-base-100 shadow-xl`
-        : `btn btn-disabled bg-base-100 shadow-xl`}
+        ? `btn bg-base-100 border-2`
+        : `btn btn-disabled bg-base-100 border-2`}
     >
       <span class="hidden lg:inline"> {t("label.prevPage")}</span>
       <svg

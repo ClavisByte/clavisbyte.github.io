@@ -59,6 +59,12 @@ a {
   @apply my-2;
 }
 
+html[data-theme="winter"] {
+  body {
+    background-color: white;
+  }
+}
+
 html[data-theme="dracula"] {
   --pagefind-ui-primary: oklch(var(--nc));
   --pagefind-ui-text: oklch(var(--nc));
@@ -83,6 +89,7 @@ html[data-theme="dracula"] {
 body {
   @apply m-0 p-0 text-left bg-cover text-xl leading-7;
   background-size: 100% 600px;
+  background-color: oklch(var(--b1));
 }
 
 summary {

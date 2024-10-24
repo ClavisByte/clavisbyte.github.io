@@ -22,13 +22,13 @@ import { Icon } from "astro-icon/components";
                 <li>
                   <a
                     tabindex="0"
-                    class="menu-item text-xl font-bold p-4"
+                    class="menu-item text-xl font-bold p-2"
                     id={`header-${subItem.id}`}
                     href={subItem.href}
                     target={subItem.target || "_self"}
                     aria-label={subItem.text}
                   >
-                    <span class="inline-flex justify-center">
+                    <span class="inline-flex justify-center pl-2">
                       <Icon name={`menu/${subItem.svg}`} />
                     </span>
                     <span class="hidden lg:inline ml-2">{subItem.text}</span>
@@ -40,13 +40,13 @@ import { Icon } from "astro-icon/components";
         ) : (
           <a
             tabindex="0"
-            class="flex justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4"
+            class="flex justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-2"
             id={item.id}
             title={item.id}
             href={item.href}
             target={item.target || "_self"}
           >
-            <span class="inline-flex justify-center">
+            <span class="inline-flex justify-center pl-2">
               <Icon name={`menu/${item.svg}`} />
             </span>
             <span class="hidden lg:inline ml-2">{item.text}</span>
