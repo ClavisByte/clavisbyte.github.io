@@ -61,12 +61,12 @@ export type MenuItems =
   text: string;
   href: string;
   svg?: string;
-  target: string;
+  target?: string;
   subItems?: {
     id: string;
     text: string;
     href: string;
     svg?: string;
-    target: string;
+    target?: string;
   }[];
 }
