@@ -9,7 +9,7 @@ import { Icon } from "astro-icon/components";
   {
     menuItems.map((item) => (
       <li class="w-full relative">
-        {( item.subItems?.length > 0 ) ? (
+        {item?.subItems ? (
           <details class="menu-item">
             <summary class="justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4">
               <span class="justify-center">

@@ -1,6 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
+import { MenuItems } from "./types";
+
 // Site title and description
 export const SITE_TAB = "BYTE";
 export const SITE_TITLE = "BYTE";
@@ -16,7 +18,7 @@ export const USER_AVATAR = "/profile.png";
 export const SERVER_URL = "https://clavisbyte.link";
 
 // Menu items for navigation
-export const menuItems = [
+export const menuItems: MenuItems[] = [
   { id: "home", text: "Home", href: "/", svg: "home", target: "_self" }, // Home page
   /*{ id: "about", text: "About", href: "/about", svg: "about", target: "_self" },*/ // About page
   {
@@ -25,15 +27,15 @@ export const menuItems = [
     href: "/about",
     svg: "about",
     target: "_self",
-    subItems: [
-      /*{
+     /*subItems: [
+      {
         id: "all",
         text: "All blogs",
         href: "/blog",
         svg: "post",
         target: "_self",
-      },*/ // All blog
-    ],
+      }, // All blog
+    ], */
   },
   /*{
     id: "blog",

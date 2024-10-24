@@ -54,3 +54,19 @@ export interface EnvelopeInfo {
   isBlog: boolean;
   url: string;
 }
+
+export type MenuItems =
+{
+  id: string;
+  text: string;
+  href: string;
+  svg?: string;
+  target: string;
+  subItems?: {
+    id: string;
+    text: string;
+    href: string;
+    svg?: string;
+    target: string;
+  }[];
+}
