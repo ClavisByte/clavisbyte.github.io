@@ -19,7 +19,7 @@ export const SERVER_URL = "https://clavisbyte.link";
 export const menuItems = [
   { id: "home", text: "Home", href: "/", svg: "home", target: "_self" }, // Home page
   { id: "about", text: "About", href: "/about", svg: "about", target: "_self" }, // About page
-  {
+  /*{
     id: "blog",
     text: "Blogs",
     href: "/blog",
@@ -34,14 +34,14 @@ export const menuItems = [
         target: "_self",
       }, // All blog
     ],
-  }, // Blog page with sub-items
-  {
+  },*/ // Blog page with sub-items
+  /*{
     id: "contact",
     text: "Contact",
     href: "mailto:contact@clavisbyte.link", // Contact email
     target: "_blank", // Open in a new tab
     svg: "contact",
-  },
+  },*/
 ];
 
 // Social media and contact icons
