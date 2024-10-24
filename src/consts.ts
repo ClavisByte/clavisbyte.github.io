@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-import { MenuItems } from "./types";
+import type { MenuItems } from "./types";
 
 // Site title and description
 export const SITE_TAB = "BYTE";
