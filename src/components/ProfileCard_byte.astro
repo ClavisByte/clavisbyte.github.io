@@ -5,6 +5,7 @@ import Menu from "./ProfileCardMenu.astro";
 import Footer from "./ProfileCardFooter.astro";
 import { USER_AVATAR, USER_NAME, SITE_DESCRIPTION, BRAND_LOGO } from "../consts";
 import { getEntry } from 'astro:content';
+import ThemeIcon from "../components/ThemeIcon.astro";
 
 const aboutPost = await getEntry('spec', 'about');
 const { Content } = await aboutPost.render();
@@ -14,21 +15,16 @@ const { Content } = await aboutPost.render();
   <div class="border-0 m-auto rounded-xl flex-col gap-0 w-full sticky md:sticky lg:relative card bg-base-100 p-2 transition-colors">
     <div class="grid grid-col-1 gap-0">
       <div class="avatar p-2">
-        <!--Image
-          class="mask mask-circle"
-          format="webp"
-          width={1}
-          height={1}
-          src={USER_AVATAR}
-          alt="Profile"
-          loading="eager"
-        /-->
-       
-        <Icon class="align-middle w-[100px] h-[100px]" style="color:black;" name={`${BRAND_LOGO}`} />
+        <Icon class="align-middle w-[100px] h-[100px]" name={`${BRAND_LOGO}`} />
       </div>
       <div class="font-bold text-3xl font-anta tracking-wider">{USER_NAME}</div>
       <div class="text-sm font-saira">{SITE_DESCRIPTION}</div>
       <Footer />
+    </div>
+  </div>
+  <div class="mt-[-10px] mb-[-10px] grid grid-col-4">
+    <div class="place-self-end col-start-4 z-50 px-4">
+      <ThemeIcon />
     </div>
   </div>
   <Content />
