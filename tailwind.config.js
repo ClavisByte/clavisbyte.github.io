@@ -2,6 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    fontFamily:{
+      'mechsuit':['mechsuitregular']
+      , 'braille':['braille_printingregular']
+      , 'material_symbols':['Material Symbols Outlined']
+      , 'barcode_ex':['Libre Barcode 39 Extended']
+      , 'anta':['Anta']
+      , 'saira':['Saira']
+      , 'jersey10':['Jersey 10']
+    },
     extend: {},
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],

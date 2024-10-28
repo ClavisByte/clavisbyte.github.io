@@ -6,13 +6,14 @@ import type { MenuItems } from "./types";
 // Site title and description
 export const SITE_TAB = "BYTE";
 export const SITE_TITLE = "BYTE";
-export const SITE_DESCRIPTION = ".";
+export const SITE_DESCRIPTION = "This is just a test description";
 export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
 export const USER_NAME = "Clavis:BYTE";
 export const USER_SITE = "https://clavisbyte.link"
 export const USER_AVATAR = "/profile.png";
+export const BRAND_LOGO = "logo/byte_bg";
 
 // Server and transition settings
 export const SERVER_URL = "https://clavisbyte.link";
@@ -88,10 +89,10 @@ export const socialIcons = [
     title: "Instagram",
     svg: "instagram",
   },
-  {
+  /*{
     href: "/rss.xml",
     ariaLabel: "RSS Feed",
     title: "RSS Feed",
     svg: "rss",
-  },
+  },*/
 ];

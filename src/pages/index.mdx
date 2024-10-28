@@ -1,5 +1,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout_byte from "../layouts/BaseLayout_byte.astro";
 import BaseCard from "../components/BaseCard.astro";
+import BaseCard_byte from "../components/BaseCard_byte.astro";
 import Collapse from "../components/blog/collapse.astro";
 import Diff from "../components/blog/diff.astro";
 import Error from "../components/blog/error.astro";
@@ -10,16 +12,19 @@ import Warning from "../components/blog/warning.astro";
 import TimeLine from "../components/page/TimeLine.astro";
 import LinkCard from "../components/page/LinkCard.astro";
 
-<BaseLayout title="">
-  <BaseCard title="Home">
-    
+<BaseLayout_byte title="">
+  <BaseCard_byte title="Home" showBorder='true'>
+    # Heading 1
 
-  </BaseCard>
+    ## Heading 2
 
-  <BaseCard title="Home" >
+    ### Heading 3
 
----
+    #### Heading 4
 
+    ##### Heading 5
 
-  </BaseCard>
-</BaseLayout>
+    ###### Heading 6
+    Just some text for layout testing. This blog is a modified Frosti Theme.
+  </BaseCard_byte>
+</BaseLayout_byte>

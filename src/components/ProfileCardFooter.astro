@@ -1,20 +1,21 @@
 ---
 import { socialIcons } from "../consts.ts";
 import { Icon } from "astro-icon/components";
+import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
-<div class="text-center p-2 rounded-lg gap-4 transition-colors">
+<div class="py-1 rounded-lg gap-4 transition-colors">
   {
     socialIcons.map((icon) => (
-      <a
-        href={icon.href}
-        target="_blank"
-        class="text-center rounded-[10px] inline-block m-[0_5px] leading-[30px] w-[30px] text-2xl no-underline"
-        aria-label={icon.ariaLabel}
-        title={icon.title}
-      >
-        <Icon name={`social/${icon.svg}`} />
-      </a>
+        <a
+          href={icon.href}
+          target="_blank"
+          class="align-text-top m-[0_5px] inline-block no-underline"
+          aria-label={icon.ariaLabel}
+          title={icon.title}
+        > 
+          <Icon class="rounded-[10px] align-middle w-[30px] h-[30px] p-[4px] btn-ghost" name={`social/${icon.svg}`} />
+        </a>
     ))
   }
 </div>

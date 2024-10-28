@@ -39,6 +39,7 @@ export interface CardInfo {
   time?: string;
   isBlog: boolean;
   url?: string;
+  showBorder?: boolean;
 }
 
 export interface EnvelopeInfo {
