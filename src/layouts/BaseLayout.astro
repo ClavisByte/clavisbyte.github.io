@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import TagCard from "../components/TagCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
-import SidebarTool from "../components/SidebarTool.astro";
+import SidebarTool_byte from "../components/SidebarTool_byte.astro";
 import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { changeLanguage } from "i18next";
 
@@ -48,7 +48,7 @@ const { title, image, includeSidebar = true } = Astro.props;
               <>
                 <Profile />
                 
-                <SidebarTool />
+                <SidebarTool_byte />
               </>
             )
           }<!--CategoryCard /-->

@@ -40,6 +40,7 @@ export interface CardInfo {
   isBlog: boolean;
   url?: string;
   showBorder?: boolean;
+  class_?: string;
 }
 
 export interface EnvelopeInfo {

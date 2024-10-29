@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import TagCard from "../components/TagCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
-import SidebarTool from "../components/SidebarTool.astro";
+import SidebarTool_byte from "../components/SidebarTool_byte.astro";
 import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { changeLanguage } from "i18next";
 
@@ -28,27 +28,28 @@ const { title, image, includeSidebar = true } = Astro.props;
           "(prefers-color-scheme: dark)",
         ).matches
           ? "winter"
-          : "dracula";
+          : "dark";
         const theme = storedTheme || userPreferredTheme;
         document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.classList.add(theme);
       })();
     </script>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={image} />
   </head>
   <body>
-    <Navbar title={SITE_TITLE} />
+    <!--Navbar title={SITE_TITLE} /-->
     <div class="max-w-7xl m-auto">
       <div
-        class="relative grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-0 p-0 md:p-0 lg:p-4 top-16 md:top-0"
+        class="relative grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-0 p-0 md:p-0 lg:p-4 top-0"
       >
         <div
-          class="md:col-span-1 top-4 bg-white bg-opacity-0 p-2 hidden max-md:hidden md:inline order-2 md:order-1"
+          class="lg:col-span-1 top-4 bg-white bg-opacity-0 p-2"
         >
           {
             includeSidebar && (
               <>
                 <Profile_byte />
-                <SidebarTool />
+                <SidebarTool_byte />
               </>
             )
           }

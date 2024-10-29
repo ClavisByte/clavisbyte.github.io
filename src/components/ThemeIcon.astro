@@ -35,6 +35,9 @@
     const setTheme = (theme: string) => {
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("winter");
+      document.documentElement.classList.add(theme);
     };
 
     const themeToggle = document.getElementById("themeToggle");
@@ -54,7 +57,7 @@
     const syncThemeToggle = () => {
       const currentTheme = localStorage.getItem("theme");
       if (themeLabel1 && themeLabel2 && themeToggle1 && themeToggle2) {
-        const isDark = currentTheme === "dracula";
+        const isDark = currentTheme === "dark";
         themeLabel1.classList.toggle("active", isDark);
         themeLabel2.classList.toggle("active", !isDark);
         themeToggle1.checked = isDark;
@@ -73,7 +76,7 @@
 
     const handleToggleClick = () => {
       const currentTheme = localStorage.getItem("theme");
-      const newTheme = currentTheme === "winter" ? "dracula" : "winter";
+      const newTheme = currentTheme === "winter" ? "dark" : "winter";
       setTheme(newTheme);
       syncThemeToggle();
     };

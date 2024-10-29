@@ -1,27 +1,27 @@
 ---
-import ThemeIcon from "../components/ThemeIcon.astro";
-import BackToTopIcon from "./BackToTopIcon.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+import BackToTopIcon from "./BackToTopIcon_byte.astro";
 ---
 
-<div class="flex-col gap-4 w-full sticky top-4">
+<div class="hidden lg:block flex-col gap-4 w-full sticky top-4">
   <div
-    class=" border-2 mb-b w-full max-h-[65vh] overflow-hide top-0 card bg-base-100 p-2 menu transition-colors"
+    class="border-0 mb-b w-full max-h-[65vh] overflow-hide top-0 card p-2 menu transition-colors"
     id="content-box"
   >
-    <div class="skeleton h-4 w-28"></div>
+    <div class="skeleton h-4 w-28 bg-transparent"></div>
     <br />
-    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full bg-transparent"></div>
     <br />
-    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full bg-transparent"></div>
     <br />
-    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full bg-transparent"></div>
     <br />
   </div>
   <div
-    class="top-4 grid gap-0 grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center mb-b w-full max-h-[600px] overflow-hide card bg-base-100 border-0 p-2 transition-colors"
+    class="border-0 top-4 grid gap-0 grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center mb-b w-full max-h-[600px] overflow-hide card p-2 transition-colors"
     id="button-box"
   >
-    <BackToTopIcon />
+    <!--BackToTopIcon /-->
   </div>
 </div>
 <script>

@@ -6,14 +6,15 @@ import type { MenuItems } from "./types";
 // Site title and description
 export const SITE_TAB = "BYTE";
 export const SITE_TITLE = "BYTE";
-export const SITE_DESCRIPTION = "This is just a test description";
+export const SITE_DESCRIPTION = "TE.RA/V";
 export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
 export const USER_NAME = "Clavis:BYTE";
 export const USER_SITE = "https://clavisbyte.link"
 export const USER_AVATAR = "/profile.png";
-export const BRAND_LOGO = "logo/byte_b";
+export const BRAND_LOGO = "logo/byte_o";
+export const BRAND_LOGO_SUB = "logo/byte_b";
 
 // Server and transition settings
 export const SERVER_URL = "https://clavisbyte.link";
