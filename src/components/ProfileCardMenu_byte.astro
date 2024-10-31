@@ -15,6 +15,7 @@ const {
   class:list={[{"border-2": showBorder, "lg:w-full": !linklist }, class_ ]}
 >
   { !linklist ?
+      (
       menuItems.map((item) => (
         <li class="lg:w-full relative border-0">
           {item?.subItems ? (
@@ -62,7 +63,9 @@ const {
           )}
         </li>
       ))
+    )
     : 
+    (
         /* Socials */
       socialIcons.map((item) => (
         <li class="w-full relative border-0">
@@ -112,10 +115,9 @@ const {
               </span>
               <div class="m-auto"></span>
                 <span class="ml-[-44px]">{item.title}</span>
-              </div>
-            </a>
-          )}
-        </li>
+              </div></a>
+          )}</li>
       ))
+    )
   }
 </ul>
