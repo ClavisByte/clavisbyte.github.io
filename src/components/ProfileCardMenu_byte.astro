@@ -1,57 +1,121 @@
 ---
 import { menuItems } from "../consts";
 import { Icon } from "astro-icon/components";
+import { socialIcons } from "../consts.ts";
+import type { LinkInfo } from "../types";
+
+const {
+  showBorder = false,
+  class_ = "",
+  linklist = false,
+} = Astro.props as LinkInfo;
 ---
 <ul
-  class=" border-0 flex flex-row lg:flex-col items-center m-auto menu bg-transparent w-[286px] lg:w-full m-0 lg:items-start transition-colors"
+  class=" border-0 flex flex-row lg:flex-col items-center m-auto menu bg-transparent w-[286px] m-0 lg:items-start transition-colors"
+  class:list={[{"border-2": showBorder, "lg:w-full": !linklist }, class_ ]}
 >
-  {
-    menuItems.map((item) => (
-      <li class="lg:w-full relative border-0">
-        {item?.subItems ? (
-          <details class="menu-item">
-            <summary class="justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4">
-              <span class="justify-center">
+  { !linklist ?
+      menuItems.map((item) => (
+        <li class="lg:w-full relative border-0">
+          {item?.subItems ? (
+            <details class="menu-item">
+              <summary class="justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4">
+                <span class="justify-center">
+                  <Icon name={`menu/${item.svg}`} />
+                </span>
+                <span class="hidden lg:inline ml-2">{item.text}</span>
+              </summary>
+              <ul>
+                {item.subItems?.map((subItem) => (
+                  <li>
+                    <a
+                      tabindex="0"
+                      class="menu-item text-xl font-bold p-2"
+                      id={`header-${subItem.id}`}
+                      href={subItem.href}
+                      target={subItem.target || "_self"}
+                      aria-label={subItem.text}
+                    >
+                      <span class="inline-flex justify-center pl-2">
+                        <Icon name={`menu/${subItem.svg}`} />
+                      </span>
+                      <span class="hidden lg:inline ml-2">{subItem.text}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : (
+            <a
+              tabindex="0"
+              class="flex justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-2"
+              id={item.id}
+              title={item.id}
+              href={item.href}
+              target={item.target || "_self"}
+            >
+              <span class="inline-flex justify-center lg:pl-2">
                 <Icon name={`menu/${item.svg}`} />
               </span>
               <span class="hidden lg:inline ml-2">{item.text}</span>
-            </summary>
-            <ul>
-              {item.subItems?.map((subItem) => (
-                <li>
-                  <a
-                    tabindex="0"
-                    class="menu-item text-xl font-bold p-2"
-                    id={`header-${subItem.id}`}
-                    href={subItem.href}
-                    target={subItem.target || "_self"}
-                    aria-label={subItem.text}
-                  >
-                    <span class="inline-flex justify-center pl-2">
-                      <Icon name={`menu/${subItem.svg}`} />
-                    </span>
-                    <span class="hidden lg:inline ml-2">{subItem.text}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </details>
-        ) : (
-          <a
-            tabindex="0"
-            class="flex justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-2"
-            id={item.id}
-            title={item.id}
-            href={item.href}
-            target={item.target || "_self"}
-          >
-            <span class="inline-flex justify-center lg:pl-2">
-              <Icon name={`menu/${item.svg}`} />
-            </span>
-            <span class="hidden lg:inline ml-2">{item.text}</span>
-          </a>
-        )}
-      </li>
-    ))
+            </a>
+          )}
+        </li>
+      ))
+    : 
+        /* Socials */
+      socialIcons.map((item) => (
+        <li class="w-full relative border-0">
+          {item?.subItems ? (
+            <details class="menu-item">
+              <summary class="justify-start items-center text-center text-xl font-bold p-4">
+                <span class="justify-center">
+                  <Icon name={`social/${item.svg}`} />
+                </span>
+                <div class="m-auto">
+                  <span class="ml-[-44px]">{item.title}</span>
+                </div>
+              </summary>
+              <ul>
+                {item.subItems?.map((subItem) => (
+                  <li>
+                    <a
+                      tabindex="0"
+                      class="menu-item text-xl font-bold p-2"
+                      id={`header-${subItem.id}`}
+                      href={subItem.href}
+                      target={subItem.target || "_self"}
+                      aria-label={subItem.title}
+                    >
+                      <span class="inline-flex justify-center pl-2">
+                        <Icon name={`social/${subItem.svg}`} />
+                      </span>
+                      <div class="m-auto">
+                        <span class="ml-[-44px]">{subItem.title}</span>
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : (
+            <a
+              tabindex="0"
+              class="flex justify-start items-center text-center text-xl font-bold p-2"
+              id={item.id}
+              title={item.id}
+              href={item.href}
+              target={item.target || "_self"}
+            >
+              <span class="inline-flex justify-center pl-2">
+                <Icon name={`social/${item.svg}`} />
+              </span>
+              <div class="m-auto"></span>
+                <span class="ml-[-44px]">{item.title}</span>
+              </div>
+            </a>
+          )}
+        </li>
+      ))
   }
 </ul>

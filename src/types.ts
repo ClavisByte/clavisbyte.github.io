@@ -43,6 +43,13 @@ export interface CardInfo {
   class_?: string;
 }
 
+export interface LinkInfo {
+  showBorder?: boolean;
+  class_?: string;
+  menu?: boolean;
+  linklist?: boolean;
+}
+
 export interface EnvelopeInfo {
   title: string;
   desc: string;
@@ -68,6 +75,24 @@ export type MenuItems =
     id: string;
     text: string;
     href: string;
+    svg?: string;
+    target?: string;
+  }[];
+}
+
+export type SocialItems =
+{
+  id?: string;
+  href?: string;
+  ariaLabel?: string;
+  title?: string;
+  svg?: string;
+  target?: string;
+  subItems?: {
+    id?: string;
+    href?: string;
+    ariaLabel?: string;
+    title?: string;
     svg?: string;
     target?: string;
   }[];

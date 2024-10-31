@@ -6,8 +6,17 @@ import Footer from "./ProfileCardFooter.astro";
 import { USER_AVATAR, USER_NAME, SITE_DESCRIPTION, BRAND_LOGO, BRAND_LOGO_SUB } from "../consts";
 import { getEntry } from 'astro:content';
 import ThemeIcon from "../components/ThemeIcon.astro";
+import type { LinkInfo } from "../types";
+
 const aboutPost = await getEntry('spec', 'about');
 const { Content } = await aboutPost.render();
+
+const {
+  showBorder = false,
+  class_ = "",
+  menu = true,
+  linklist = false,
+} = Astro.props as LinkInfo;
 ---
 
 <div class="w-full">
@@ -24,12 +33,12 @@ const { Content } = await aboutPost.render();
           <Icon class="hidden dark:!block align-middle w-[100px] h-[100px]" name={`${BRAND_LOGO_SUB}`} />
         </a>
       </div>
-      <div class="font-bold text-3xl font-anta tracking-wider">{USER_NAME}</div>
+      <a href="/"><div class="font-bold text-3xl font-anta tracking-wider">{USER_NAME}</div></a>
       <div class="text-sm font-saira">{SITE_DESCRIPTION}</div>
-      <Footer />
+      { linklist ? <Menu linklist={linklist} /> : <Footer /> }
     </div>
   </div>
   <Content />
-  <Menu />
+  { menu ? <Menu /> : "" }
 </div>
 

@@ -1,12 +1,12 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-import type { MenuItems } from "./types";
+import type { MenuItems, SocialItems } from "./types";
 
 // Site title and description
 export const SITE_TAB = "BYTE";
 export const SITE_TITLE = "BYTE";
-export const SITE_DESCRIPTION = "TE.RA/V";
+export const SITE_DESCRIPTION = "TETRA Type-01/B";
 export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
@@ -23,22 +23,13 @@ export const SERVER_URL = "https://clavisbyte.link";
 export const menuItems: MenuItems[] = [
   { id: "home", text: "Home", href: "/", svg: "home", target: "_self" }, // Home page
   /*{ id: "about", text: "About", href: "/about", svg: "about", target: "_self" },*/ // About page
-  {
+  /*{
     id: "about",
     text: "About",
     href: "/about",
     svg: "about",
     target: "_self",
-     /*subItems: [
-      {
-        id: "all",
-        text: "All blogs",
-        href: "/blog",
-        svg: "post",
-        target: "_self",
-      }, // All blog
-    ], */
-  },
+  },*/
   /*{
     id: "blog",
     text: "Blogs",
@@ -65,7 +56,7 @@ export const menuItems: MenuItems[] = [
 ];
 
 // Social media and contact icons
-export const socialIcons = [
+export const socialIcons : SocialItems[] = [
   {
     href: "https://www.youtube.com/@ClavisByte",
     ariaLabel: "Youtube @ClavisByte",

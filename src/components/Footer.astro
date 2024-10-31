@@ -1,10 +1,20 @@
 ---
 import { USER_NAME } from "../consts";
 import { USER_SITE } from "../consts";
+import type { LinkInfo } from "../types";
+
+const {
+  showBorder = false,
+  class_ = "",
+  menu = true,
+  linklist = false,
+} = Astro.props as LinkInfo;
+
 ---
 
 <footer
-  class="border-0 relative footer rounded-xl gap-0 items-start card bg-base-100 p-2 items-center fade-in-up transition-colors"
+  class="border-0 relative footer rounded-xl gap-0 items-start card bg-base-100 p-2 items-center fade-in-up transition-colors" 
+  class:list={[{"w-[286px]": linklist, "m-auto": linklist, "text-center": linklist }, class_ ]}
 >
   <aside class="grid-flow-col items-center">
     <svg
@@ -24,17 +34,18 @@ import { USER_SITE } from "../consts";
       Copyright © <a href={USER_SITE} target="_blank" class="font-bold"
         >{USER_NAME}</a
       >
-      {new Date().getFullYear()} - All right reserved
+      {new Date().getFullYear()} { linklist ? "" : " - All right reserved" }
     </p>
   </aside>
-  <nav class="place-self-end">
-    <p>
-      Powered by a modified
-      <!-- Thanks for using this template. You can keep this line to support my work :) -->
-      <a
-        href="https://github.com/EveSunMaple/Frosti"
-        target="_blank"
-        class="font-bold">Frosti Template</a>
-    </p>
-  </nav-->
+  { linklist ? "" : 
+    <nav class="place-self-end">
+      <p>
+        Powered by a modified
+        <a
+          href="https://github.com/EveSunMaple/Frosti"
+          target="_blank"
+          class="font-bold">Frosti Template</a>
+      </p>
+    </nav>
+  }
 </footer>
