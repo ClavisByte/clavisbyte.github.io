@@ -20,7 +20,7 @@ const {
 ---
 
 <div class="w-full">
-  <div class="border-0 m-auto rounded-xl flex-col gap-0 w-full sticky md:sticky lg:relative card bg-base-100 p-2 transition-colors">
+  <div class="m-auto rounded-xl flex-col gap-0 w-full sticky md:sticky lg:relative card bg-base-100 p-2 transition-colors">
     <div class="text-center gap-0"> <!-- grid grid-col-1 -->
       <div class="">
         <div class="z-50 px-4 ml-[-14px]">
@@ -35,7 +35,7 @@ const {
       </div>
       <a href="/"><div class="font-bold text-3xl font-anta tracking-wider">{USER_NAME}</div></a>
       <div class="text-sm font-saira">{SITE_DESCRIPTION}</div>
-      { linklist ? <Menu linklist={linklist} /> : <Footer /> }
+      { linklist ? <Menu linklist={linklist} showBorder={showBorder} /> : <Footer /> }
     </div>
   </div>
   <Content />

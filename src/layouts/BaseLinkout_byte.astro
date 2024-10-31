@@ -11,9 +11,17 @@ import CategoryCard from "../components/CategoryCard.astro";
 import SidebarTool_byte from "../components/SidebarTool_byte.astro";
 import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { changeLanguage } from "i18next";
+import type { LinkInfo } from "../types";
 
 changeLanguage("en");
 const { title, image, includeSidebar = true } = Astro.props;
+
+const {
+  showBorder = false,
+  class_ = "",
+  menu = true,
+  linklist = false,
+} = Astro.props as LinkInfo;
 ---
 
 <!doctype html>
@@ -40,21 +48,21 @@ const { title, image, includeSidebar = true } = Astro.props;
     <!--Navbar title={SITE_TITLE} /-->
     <div class="max-w-7xl m-auto">
       <div
-        class="relative grid grid-cols-1 gap-0 p-0 md:p-0 lg:p-4 top-0"
+        class="relative grid grid-cols-1 gap-0 p-0 top-0"
       >
         <div
-          class="lg:col-span-1 top-4 bg-transparent bg-opacity-0 p-2"
+          class="col-span-1 top-4 bg-transparent bg-opacity-0 p-2"
         >
           {
             includeSidebar && (
               <>
-                <Profile_byte menu={ false } linklist={ true } />
+                <Profile_byte menu={ menu } linklist={ linklist } showBorder={ showBorder } />
               </>
             )
           }
         </div>
         <div
-          class="col-span-3 md:col-span-4 lg:col-span-3 bg-transparent bg-opacity-0 p-2 order-1 md:order-2"
+          class="col-span-3 bg-transparent bg-opacity-0 p-2 order-1"
         >
           <div>
             <main id="swup" class="detail transition-main">
