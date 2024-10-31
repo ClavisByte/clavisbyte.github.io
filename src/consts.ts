@@ -81,6 +81,12 @@ export const socialIcons : SocialItems[] = [
     title: "Instagram",
     svg: "instagram",
   },
+  {
+    href: "https://clavisbyte.neocities.org",
+    ariaLabel: "Neocities @clavisbyte",
+    title: "Neocities",
+    svg: "neocities",
+  },
   /*{
     href: "/rss.xml",
     ariaLabel: "RSS Feed",
