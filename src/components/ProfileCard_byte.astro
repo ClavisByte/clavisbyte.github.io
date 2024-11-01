@@ -6,7 +6,7 @@ import Footer from "./ProfileCardFooter.astro";
 import { USER_AVATAR, USER_NAME, SITE_DESCRIPTION, BRAND_LOGO, BRAND_LOGO_SUB } from "../consts";
 import { getEntry } from 'astro:content';
 import ThemeIcon from "../components/ThemeIcon.astro";
-import type { LinkInfo } from "../types";
+import type { LinkListData } from "../types";
 
 const aboutPost = await getEntry('spec', 'about');
 const { Content } = await aboutPost.render();
@@ -17,7 +17,7 @@ const {
   menu = true,
   linklist = false,
   sideCard = false,
-} = Astro.props as LinkInfo;
+} = Astro.props as LinkListData;
 ---
 
 <div class=""

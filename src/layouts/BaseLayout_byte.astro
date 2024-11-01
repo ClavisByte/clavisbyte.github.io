@@ -11,7 +11,7 @@ import CategoryCard from "../components/CategoryCard.astro";
 import SidebarTool_byte from "../components/SidebarTool_byte.astro";
 import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { changeLanguage } from "i18next";
-import type { LinkInfo } from "../types";
+import type { LinkListData } from "../types";
 
 changeLanguage("en");
 const { title, image, includeSidebar = true } = Astro.props;
@@ -22,7 +22,7 @@ const {
   menu = true,
   linklist = false,
   sideCard = false,
-} = Astro.props as LinkInfo;
+} = Astro.props as LinkListData;
 ---
 
 <!doctype html>

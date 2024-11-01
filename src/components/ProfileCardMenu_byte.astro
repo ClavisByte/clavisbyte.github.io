@@ -2,13 +2,13 @@
 import { menuItems } from "../consts";
 import { Icon } from "astro-icon/components";
 import { socialIcons } from "../consts.ts";
-import type { LinkInfo } from "../types";
+import type { LinkListData } from "../types";
 
 const {
   showBorder = false,
   class_ = "",
   linklist = false,
-} = Astro.props as LinkInfo;
+} = Astro.props as LinkListData;
 ---
 <ul
   class=" border-0 flex flex-row lg:flex-col items-center m-auto menu bg-transparent w-[286px] m-0 lg:items-start transition-colors"

@@ -43,12 +43,30 @@ export interface CardInfo {
   class_?: string;
 }
 
-export interface LinkInfo {
+export interface LinkListData {
   showBorder?: boolean;
   class_?: string;
   menu?: boolean;
   linklist?: boolean;
   sideCard?: boolean;
+}
+
+export interface ProfileData {
+  title?: string;
+  img?: string;
+  desc?: string;
+  url?: string;
+  badge?: string;
+  target?: string;
+}
+
+export interface LinkCard {
+  title?: string;
+  img?: string;
+  desc?: string;
+  url?: string;
+  badge?: string;
+  target?: string;
 }
 
 export interface EnvelopeInfo {
