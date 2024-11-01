@@ -48,6 +48,7 @@ export interface LinkInfo {
   class_?: string;
   menu?: boolean;
   linklist?: boolean;
+  sideCard?: boolean;
 }
 
 export interface EnvelopeInfo {

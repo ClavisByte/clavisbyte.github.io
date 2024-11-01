@@ -21,6 +21,7 @@ const {
   class_ = "",
   menu = true,
   linklist = false,
+  sideCard = false,
 } = Astro.props as LinkInfo;
 ---
 
@@ -56,7 +57,7 @@ const {
           {
             includeSidebar && (
               <>
-                <Profile_byte menu={ menu } linklist={ linklist } showBorder={ showBorder } />
+                <Profile_byte menu={ menu } linklist={ linklist } showBorder={ showBorder } sideCard={ sideCard } />
               </>
             )
           }
@@ -68,7 +69,7 @@ const {
             <main id="swup" class="detail transition-main">
               <div class="grid grid-cols-1 gap-4 fade-in-up">
                 <slot />
-                <Footer linklist={ true } />
+                <Footer linklist={ linklist } />
               </div>
             </main>
             <br />

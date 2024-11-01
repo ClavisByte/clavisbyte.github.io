@@ -12,7 +12,7 @@ const {
 ---
 <ul
   class=" border-0 flex flex-row lg:flex-col items-center m-auto menu bg-transparent w-[286px] m-0 lg:items-start transition-colors"
-  class:list={[{"border-2 border-slate-500 rounded-xl": showBorder, "mt-5": linklist, "lg:w-full": !linklist }, class_ ]}
+  class:list={[{"border-2 border-slate-500 rounded-xl": showBorder, "mt-5 pr-8": linklist, "lg:w-full": !linklist }, class_ ]}
 >
   { !linklist ?
       (
@@ -71,12 +71,12 @@ const {
         <li class="w-full relative border-0">
           {item?.subItems ? (
             <details class="menu-item">
-              <summary class="justify-start items-center text-center text-xl font-bold p-4">
+              <summary class="justify-start items-center text-right text-xl font-bold p-4">
                 <span class="justify-center">
                   <Icon name={`social/${item.svg}`} />
                 </span>
-                <div class="m-auto">
-                  <span class="ml-[-44px]">{item.title}</span>
+                <div class="w-full pr-1">
+                  <span class="">{item.title}</span>
                 </div>
               </summary>
               <ul>
@@ -84,7 +84,7 @@ const {
                   <li>
                     <a
                       tabindex="0"
-                      class="menu-item text-xl font-bold p-2"
+                      class="menu-item text-right text-xl font-bold p-2"
                       id={`header-${subItem.id}`}
                       href={subItem.href}
                       target={subItem.target || "_self"}
@@ -93,8 +93,8 @@ const {
                       <span class="inline-flex justify-center pl-2">
                         <Icon name={`social/${subItem.svg}`} />
                       </span>
-                      <div class="m-auto">
-                        <span class="ml-[-44px]">{subItem.title}</span>
+                      <div class="w-full pr-1">
+                        <span class="">{subItem.title}</span>
                       </div>
                     </a>
                   </li>
@@ -104,7 +104,7 @@ const {
           ) : (
             <a
               tabindex="0"
-              class="flex justify-start items-center text-center text-xl font-bold p-2"
+              class="flex justify-start items-center text-right text-xl font-bold p-2"
               id={item.id}
               title={item.id}
               href={item.href}
@@ -113,8 +113,8 @@ const {
               <span class="inline-flex justify-center pl-2">
                 <Icon name={`social/${item.svg}`} />
               </span>
-              <div class="m-auto"></span>
-                <span class="ml-[-44px]">{item.title}</span>
+              <div class="w-full pr-1"></span>
+                <span class="">{item.title}</span>
               </div></a>
           )}</li>
       ))
