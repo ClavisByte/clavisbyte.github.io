@@ -1,6 +1,12 @@
 ---
 import type { LinkCard } from "../../types";
-const { title, img, desc, url, badge, target = "_blank" } = Astro.props as LinkCard;
+const 
+{ title = ""
+, img
+, desc
+, url
+, badge
+, target = "_blank" } = Astro.props as LinkCard;
 import { Image } from "astro:assets";
 ---
 
