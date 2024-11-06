@@ -1,10 +1,15 @@
 ---
 import Menu from "../components/NavbarMenu.astro";
 import { SITE_TITLE } from "../consts";
+import type { LinkListData } from "../types";
+const {
+  hideCard = false
+} = Astro.props as LinkListData;
 ---
-
+<!-- transform -translate-y-full class:list={[{"lg:hidden":!hideCard}]} -->
 <navbar
-  class="navbar max-md:translate-y-0 fixed px-2 w-full transform -translate-y-full text-center z-50 transition-colors bg-base-100 border-2"
+  class="navbar max-md:translate-y-0 fixed px-2 w-full text-center z-50 transition-colors bg-transparent border-0"
+  
 >
   <div class="navbar-start">
     <details class="dropdown" id="dropdown">
@@ -26,13 +31,13 @@ import { SITE_TITLE } from "../consts";
           ></path></svg
         >
       </summary>
-      <Menu />
+      <Menu hideCard={hideCard} />
     </details>
   </div>
   <div class="navbar-center">
-    <a class="btn btn-ghost text-xl" href="/">{SITE_TITLE}</a>
+    <!--a class="btn btn-ghost text-xl" href="/">{SITE_TITLE}</a-->
   </div>
-  <div class="navbar-end">
+  <div class="navbar-end hidden">
     <div class="flex justify-center card w-12 h-12">
       <label for="themeToggle2" id="themeLabel2" class="hidden"
         ><span class="sr-only">Theme Toggle</span>

@@ -11,6 +11,7 @@ module.exports = {
       , 'anta':['Anta']
       , 'saira':['Saira']
       , 'jersey10':['Jersey 10']
+      , 'redacted':['Redacted']
     },
     extend: {},
   },

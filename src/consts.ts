@@ -10,7 +10,7 @@ export const SITE_DESCRIPTION = "TETRA Type-01/B";
 export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
-export const USER_NAME = "Clavis:BYTE";
+export const USER_NAME = "B Y T E";
 export const USER_SITE = "https://clavisbyte.link"
 export const USER_AVATAR = "/profile.png";
 export const BRAND_LOGO = "logo/byte_o";
@@ -30,22 +30,39 @@ export const menuItems: MenuItems[] = [
     svg: "about",
     target: "_self",
   },*/
+  { id: "iv", text: "IV", href: "/iv", svg: "blog", target: "_self" }, 
+  { id: "clavis", text: "Clavis", href: "/clavis", svg: "blog", target: "_self" }, 
+  { id: "byte", text: "BYTE", href: "/byte", svg: "blog", target: "_self" }, 
   /*{
-    id: "blog",
-    text: "Blogs",
-    href: "/blog",
+    id: "oc_profiles",
+    text: "OC Profiles",
+    href: "/profiles",
     svg: "blog",
     target: "_self",
     subItems: [
       {
-        id: "all",
-        text: "All blogs",
-        href: "/blog",
+        id: "iv",
+        text: "IV",
+        href: "/iv",
         svg: "post",
         target: "_self",
-      }, // All blog
+      },
+      {
+        id: "clavis",
+        text: "Clavis",
+        href: "/clavis",
+        svg: "post",
+        target: "_self",
+      },
+      {
+        id: "byte",
+        text: "BYTE Device",
+        href: "/byte",
+        svg: "post",
+        target: "_self",
+      },
     ],
-  },*/ // Blog page with sub-items
+  }, */ // Blog page with sub-items
   /*{
     id: "contact",
     text: "Contact",
@@ -80,13 +97,7 @@ export const socialIcons : SocialItems[] = [
     ariaLabel: "Instagram @clavisbyte",
     title: "Instagram",
     svg: "instagram",
-  },
-  {
-    href: "https://clavisbyte.neocities.org",
-    ariaLabel: "Neocities @clavisbyte",
-    title: "Neocities",
-    svg: "neocities",
-  },
+  }
   /*{
     href: "/rss.xml",
     ariaLabel: "RSS Feed",

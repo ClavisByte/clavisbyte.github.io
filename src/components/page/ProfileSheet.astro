@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import type { ProfileData } from "../../types";
+
+interface Props {
+  items?: ProfileData[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="border-0 border-slate-500 bg-transparent w-full rounded-lg bg-base-100 ease-in-out link-card">
+  <div class="hero-content grid grid-cols-1">
+
+
+    { items?.map( item => 
+      (<>
+        <div class="border-0 grid grid-cols-1 lg:grid-cols-3 w-full gap-4">
+          <div class="border-2 border-slate-500 rounded-lg row-span-3 col-span-2 lg:col-span-1 w-full h-full">
+
+            <div class="border-0 border-slate-500 rounded-lg row-span-1 col-span-1 w-full">
+              <h1 id="heading-1" class=" bg-slate-500 text-slate-300 text-xl font-bold text-center">
+                {item.name?.first + " " + item.name?.last}
+              </h1>
+              { item.svgs ? (
+                <div class="border-0 border-slate-500 rounded-lg row-span-1 col-span-1 flex justify-center p-4">
+                  { item.svgs.length > 0 ? (
+                  <Icon class="dark:hidden align-middle w-[100px] h-[100px]" name={`${item.svgs?.at(0)}`} />
+                  <Icon class="hidden dark:!block align-middle w-[100px] h-[100px]" name={`${item.svgs?.at(1)}`} />
+                  ) : "" }
+                </div>
+              ) :
+                item.img && (
+                <div class="border-0 border-slate-500 rounded-lg row-span-1 col-span-1 flex justify-center p-4">
+                  <Image
+                    src={item.img}
+                    width={100}
+                    height={100}
+                    format="webp"
+                    alt={item.name?.first + " "}
+                    loading="eager"
+                    class="border-2 border-slate-500 max-w-full md:max-w-[13rem] rounded-lg"/>
+                </div> )
+              }
+            </div>
+
+            { ( item.basicDetails && item.personalDetails ) ? (
+            <div class="border-0 border-slate-500 rounded-lg row-span-1 col-span-1 grow w-full">
+
+              <div class="grid grid-cols-1 grid-flow-dense">
+                <div class="w-full grid grid-cols-2 gap-0 mb-2">
+                  <h3 class="bg-slate-500 text-slate-300 row-span-1 col-span-2 text-center">Basic Info</h3>
+                { item.basicDetails.length > 0 ? item.basicDetails?.map( basic => 
+                  <p class="row-span-1 col-span-1 text-[0.8em] font-bold mx-4 mt-2">{basic.title}</p>
+                  <p class="row-span-1 col-span-1 text-[0.8em] mx-4 mt-2"
+                    class:list={[{"font-redacted":basic.redacted}]}><slot set:html={basic.content}/></p> ) : "" }
+                </div>
+                <div class="w-full grid grid-cols-2 gap-0 mb-2">
+                  <h3 class="bg-slate-500 text-slate-300 row-span-1 col-span-2 text-center">Details</h3>
+                { item.personalDetails.length > 0 ? item.personalDetails?.map( detail => 
+                  <p class="row-span-1 col-span-1 text-[0.8em] font-bold mx-4 mt-2">{detail.title}</p>
+                  <p class="row-span-1 col-span-1 text-[0.8em] mx-4 mt-2"
+                     class:list={[{"font-redacted":detail.redacted}]}><slot set:html={detail?.content}/></p> ): "" }
+                </div>
+              </div>
+
+            </div> ) : "" }
+          </div>
+
+
+          { item.about ? (
+          <div class="border-0 border-slate-500 rounded-lg row-span-3 col-span-2 grid grid-cols-1 w-full h-full gap-4">
+            { item.about.length > 0 ? item.about?.map( abt =>
+            <div class="border-2 border-slate-500 rounded-lg row-span-1 col-span-2 grow w-full h-full mx-auto">
+              <h3 id="heading-2" class="bg-slate-500 text-slate-300 row-span-1 col-span-2 text-center">{abt?.title}</h3>
+              <p class="mt-4 mb-2 mx-2 px-2 text-[0.85em]"
+                 class:list={[{"font-redacted":abt.redacted}]}><slot set:html={abt?.content}/></p>
+            </div> ) : "" }
+          </div> ) : "" }
+
+        </div>
+
+        { item.descriptions ?
+          <>
+            { item.descriptions.length > 0 ? item.descriptions?.map( desc =>
+            <div class="border-2 border-slate-500 rounded-lg row-span-1 grow w-full h-full mx-auto">
+              <h3 id="heading-2" class="bg-slate-500 text-slate-300 row-span-1 col-span-2 text-center">{desc?.title}</h3>
+              <p class="mt-4 mb-2 mx-2 px-2 text-[0.85em]"
+                 class:list={[{"font-redacted":desc.redacted}]}><slot set:html={desc?.content}/></p>
+            </div>
+            ) : "" }
+          </>
+         : "" }
+
+        { item.miscellaneous ?
+            ( <div class="border-2 border-slate-500 rounded-lg row-span-1 grow w-full h-full mx-auto">
+              <h3 id="heading-2" class="bg-slate-500 text-slate-300 row-span-1 col-span-2 text-center">Miscellaneous</h3>
+              <ul class="mt-4 mb-2 mx-2 text-[0.8em]">
+                { item.miscellaneous.length > 0 ? item.miscellaneous?.map( desc =>
+                <li class:list={[{"font-redacted":desc.redacted}]}><slot set:html={desc?.content}/></li>
+                ) : "" }
+              </ul>
+            </div>
+          ) : "" }
+      </>
+      ))
+    }
+  </div>
+</div>

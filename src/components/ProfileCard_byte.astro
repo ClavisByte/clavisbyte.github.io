@@ -17,30 +17,26 @@ const {
   menu = true,
   linklist = false,
   sideCard = false,
+  hideCard = false
 } = Astro.props as LinkListData;
 ---
 
-<div class=""
-    class:list={[{"w-[286px] m-auto":linklist}, {"w-full border-0":!linklist}, class_]}>
+<div class:list={[{"w-[286px] m-auto":linklist}, {"w-full border-0":!linklist}, class_]}>
   <div class="m-auto rounded-xl flex-col gap-0 w-full sticky md:sticky lg:relative card bg-base-100 p-2 transition-colors">
     <div class="text-center gap-0 "> <!-- grid grid-col-1 -->
-      <div class="">
-        <div class="z-50 px-4 ml-[-14px]">
-          <ThemeIcon />
-        </div>
-      </div>
-      <div class="mt-[-24px] avatar p-2">
-        <a href="/">
+      <div class="avatar p-2">
+        <a class="id_home" href="/">
           <Icon class="dark:hidden align-middle w-[100px] h-[100px]" name={`${BRAND_LOGO}`} />
           <Icon class="hidden dark:!block align-middle w-[100px] h-[100px]" name={`${BRAND_LOGO_SUB}`} />
         </a>
       </div>
-      <a href="/"><div class="font-bold text-3xl font-anta tracking-wider">{USER_NAME}</div></a>
+      <a class="id_home" href="/"><div class="font-bold text-3xl font-anta tracking-wider">{USER_NAME}</div></a>
       <div class="text-sm font-saira">{SITE_DESCRIPTION}</div>
       { linklist ? <Menu linklist={linklist} showBorder={showBorder} /> : <Footer /> }
     </div>
   </div>
-  { sideCard ? <Content /> : "" }
-  { menu ? <Menu /> : "" }
+  <div class:list={[{"hidden":hideCard}]}>
+    { sideCard ? <Content /> : "" }
+    <!-- { menu ? <Menu hideCard={hideCard} /> : "" } -->
+  </div>
 </div>
-

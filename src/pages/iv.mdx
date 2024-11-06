@@ -1,0 +1,86 @@
+import BaseLayout from "../layouts/BaseLayout_byte.astro";
+import BaseCard from "../components/BaseCard_byte.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine_byte.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+import ProfileSheet from "../components/page/ProfileSheet.astro";
+
+<BaseLayout title="Terabyte" sideCard={ true }>
+  <ProfileSheet
+    items=
+    {[
+      { 
+        img                 :"",
+        svgs:
+        [
+            "menu/question"
+          , "menu/question"
+        ],
+        about:
+        [
+            { title: "About", content: "<b>IV</b> (Ivy) is an android, serving and housing Clavis' engram. She functions as his existance and extension." }
+          , { title: "Backstory", content: "Often called Ivy, an extensively modified Tetra series Type-01 android to develop a sense of individuality. While she functions as an extension of Clavis, her modifications grant her a distinct personality and capabilities beyond her other Tetra series androids." }
+          , { title: "Appearance", content: "? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?", redacted:true }
+        ],
+        name:
+        { 
+            first           : "IV"
+          , last            : ""
+        },
+        basicDetails:
+        [
+              { title: "Nicknames", content: "Ivy, Tera" }
+            , { title: "Aliases", content: "Byte" }
+        ],
+        "personalDetails":
+        [
+            { title: "Gender", content: "Female" }
+          , { title: "Age", content: "??" }
+          , { title: "Birthday", content: "XX04-04-04" }
+          , { title: "Height", content: "?" }
+          , { title: "Weight", content: "?" }
+          , { title: "Type", content: "Android" }
+          , { title: "Production #", content: "Tetra" }
+          , { title: "Model #", content: "Type-01/B" }
+        ],
+        descriptions:
+        [
+          { title:"Personality", content:"Ivy is a quiet, composed android whose confidence radiates through her actions rather than words. Focused, self-assured, and observant, she operates with a steady, reliable nature, relying on logic and subtle gestures. With her calm and grounded temperament, she embodies quiet resilience, unshaken by stress. She maintains her poise and acts with purpose." }
+        ],
+        "characteristics":
+        {
+            traits          : [ "Self-assured, Logical, Observant, Reliable, Resilient, Calm" ]
+          , enneagram       : [ "Type 5" ]
+          , moralAlignment  : [ "True Neutral" ]
+          , archtype        : [ "Guardian" ]
+          , temperment      : [ "Calm and steady, Unshaken under stress, Resilient" ]
+          , schemata        : [ "Self-reliance and efficiency" ]
+          , mannerisms      : [ "Subtle deliberate gestures, Precise actions, Efficent and brief speech" ]
+        },
+
+        likes               :[ "" ],
+        dislikes            :[ "" ],
+        languages           :[ "English" ],
+        
+        miscellaneous:
+        [
+            { content: "Ivy's name is a play on Latin Numerals, IV. It is a reference to her production series, Tetra; Greek prefix meaning four." }
+          , { content: "Ivy's nickname, Tera, is short for Tetra." }
+          , { content: "Ivy's age is based on her years active as an android after production." }
+        ]
+      }
+    ]}
+  />
+
+  <TimeLine
+    items={[
+      { year: "2024-04-11", event: "Profile Added." },
+    ]}
+  />
+</BaseLayout>

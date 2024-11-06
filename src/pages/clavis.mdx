@@ -1,0 +1,84 @@
+import BaseLayout from "../layouts/BaseLayout_byte.astro";
+import BaseCard from "../components/BaseCard_byte.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine_byte.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+import ProfileSheet from "../components/page/ProfileSheet.astro";
+
+<BaseLayout title="Clavis" sideCard={ true }>
+  <ProfileSheet
+    items=
+    {[
+      { 
+        img                 :"",
+        svgs:
+        [
+            "profile/byte_o"
+          , "profile/byte_b"
+        ],
+        about:
+        [
+            { title: "About"
+            , content: "<b>Clavis</b> is an engram of his former self. A functioning collection of networked memories, retaining a consciousness." }
+          , { title: "Backstory"
+          , content: "An attempt at preservation, Clavis' engram is embedded within IV, dependent on her systems to sustain his existence.", redacted:false }
+          , { title: "Appearance"
+          , content: "Seen floating near IV as the cat-like helmet of the BYTE systems/device. Even though Clavis' engram is within IV, he is able to remotely manipulate the BYTE device as a physical entity.", redacted:false }
+        ],
+        name:
+        { 
+            first           : "Clavis"
+          , last            : ""
+        },
+        basicDetails:
+        [
+            { title: "Aliases", content: "Byte" }
+        ],
+        "personalDetails":
+        [
+            { title: "Gender", content: "Male" }
+          , { title: "Age", content: "inapplicable" }
+          , { title: "Birthday", content: "inapplicable" }
+          , { title: "Height", content: "inapplicable" }
+          , { title: "Weight", content: "inapplicable" }
+          , { title: "Type", content: "Engram" }
+        ],
+        descriptions:
+        [
+          { title:"Personality", content:"? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ? ?? ? ?? ? ?? ? ?? ? ?? ? ?? ? ?? ? ?? ? ?? ? ?? ? ?? ? ?", redacted:true }
+        ],
+        "characteristics":
+        {
+            traits          : [ "" ]
+          , enneagram       : [ "" ]
+          , moralAlignment  : [ "" ]
+          , archtype        : [ "" ]
+          , temperment      : [ "" ]
+          , schemata        : [ "" ]
+          , mannerisms      : [ "" ]
+        },
+
+        likes               :[ "" ],
+        dislikes            :[ "" ],
+        languages           :[ "English" ],
+        
+        miscellaneous:
+        [
+            { content: "Clavis' name is Latin for a key or glossary" }
+        ]
+      }
+    ]}
+  />
+
+  <TimeLine
+    items={[
+      { year: "2024-04-11", event: "Profile Added" },
+    ]}
+  />
+</BaseLayout>

@@ -1,9 +1,15 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro";
 import BackToTopIcon from "./BackToTopIcon_byte.astro";
+import type { LinkListData } from "../types";
+
+const {
+  hideCard = false
+} = Astro.props as LinkListData;
 ---
 
-<div class="hidden lg:block flex-col gap-4 w-full sticky top-4">
+<div class="flex-col gap-4 w-full sticky top-4"
+     class:list={[{"hidden":hideCard}, {"hidden lg:block":!hideCard}]}>
   <div
     class="border-0 mb-b w-full max-h-[65vh] overflow-hide top-0 card p-2 menu transition-colors"
     id="content-box"

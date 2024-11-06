@@ -12,9 +12,13 @@ import SidebarTool_byte from "../components/SidebarTool_byte.astro";
 import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { changeLanguage } from "i18next";
 import type { LinkListData } from "../types";
+import { pathsEqual } from "@utils/url-utils";
+import ThemeIcon from "../components/ThemeIcon.astro";
 
 changeLanguage("en");
 const { title, image, includeSidebar = true } = Astro.props;
+
+const isHomePage = pathsEqual(Astro.url.pathname, '/');
 
 const {
   showBorder = false,
@@ -46,40 +50,61 @@ const {
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={image} />
   </head>
   <body>
-    <!--Navbar title={SITE_TITLE} /-->
-    <div class="max-w-7xl m-auto">
-      <div
-        class="relative grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-0 p-0 md:p-0 lg:p-4 top-0"
-      >
+    <div class="fixed z-50 w-full h-[100px] p-2 m-auto bg-transparent border-0 border-slate-500"><span class="mt-[60px] ml-5 float-left"><ThemeIcon /></span></div>
+    <main id="swup" class="detail transition-main">
+      <div class=""></div>
+      <Navbar title={SITE_TITLE} hideCard={isHomePage} />
+      <div class="max-w-7xl m-auto">
         <div
-          class="lg:col-span-1 top-4 bg-white bg-opacity-0 p-2"
-        >
-          {
-            includeSidebar && (
-              <>
-                <Profile_byte sideCard={ sideCard }/>
-                <SidebarTool_byte />
-              </>
-            )
-          }
-        </div>
-        <div
-          class="col-span-3 md:col-span-4 lg:col-span-3 bg-white bg-opacity-0 p-2 order-1 md:order-2"
-        >
-          <div>
-            <main id="swup" class="detail transition-main">
-              <div class="grid grid-cols-1 gap-4 fade-in-up">
-                <slot />
-                <Footer />
-              </div>
-            </main>
-            <br />
+          class:list=
+          {[
+              {"relative grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-0 p-0 md:p-0 lg:p-4 top-0":!isHomePage}
+            , {"relative grid grid-cols-1 gap-0 p-0 top-0":isHomePage}
+          ]}>
+          <div
+            class:list=
+            {[
+                { "lg:col-span-1 top-4 bg-white bg-opacity-0 p-2":!isHomePage }
+              , { "col-span-1 top-4 bg-transparent bg-opacity-0 p-2":isHomePage }
+            ]}>
+            <Profile_byte menu={ menu } linklist={ linklist } showBorder={ showBorder } sideCard={ sideCard } hideCard={isHomePage} />
+            <SidebarTool_byte hideCard={isHomePage} />
+          </div>
+          <div
+            class:list=
+            {[
+                {"col-span-3 md:col-span-4 lg:col-span-3 bg-white bg-opacity-0 p-2 order-1 md:order-2":!isHomePage}
+              , {"col-span-3 bg-transparent bg-opacity-0 p-2 order-1":isHomePage}
+            ]}
+          >
+            <div>
+              <!--main id="swup" class="detail transition-main"-->
+                <div class="grid grid-cols-1 gap-4 fade-in-up">
+                  <slot />
+                  { isHomePage ? <Footer linklist={ linklist } /> : <Footer />  }
+                </div>
+              <!--/main-->
+              <br />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
+<script>
+var elements = document.getElementsByClassName("id_home");
+var ClickedHome = function()
+{
+    //console.log('Going Home I think');
+    //var refID = document.getElementById('addSWUP');
+    //refID?.setAttribute( 'id', 'swup' );
+};
+for (var i = 0; i < elements.length; i++)
+{
+    elements[i].addEventListener('click', ClickedHome, false);
+}
+</script>
 <script>
   function addCopyButton() {
     let codeBlocks = document.querySelectorAll(".code");

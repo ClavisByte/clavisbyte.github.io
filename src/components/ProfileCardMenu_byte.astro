@@ -8,16 +8,17 @@ const {
   showBorder = false,
   class_ = "",
   linklist = false,
+  hideCard = false
 } = Astro.props as LinkListData;
 ---
 <ul
-  class=" border-0 flex flex-row lg:flex-col items-center m-auto menu bg-transparent w-[286px] m-0 lg:items-start transition-colors"
-  class:list={[{"border-2 border-slate-500 rounded-xl": showBorder, "mt-5 pr-8": linklist, "lg:w-full": !linklist }, class_ ]}
+  class="inline border-0 flex flex-row lg:flex-col items-center m-auto menu bg-transparent w-[286px] m-0 lg:items-start transition-colors"
+  class:list={[{"border-2 border-slate-500 rounded-xl": showBorder, "mt-5 pr-8": linklist, "lg:w-full": !linklist, "hidden lg:inline":!hideCard }, class_ ]}
 >
   { !linklist ?
       (
       menuItems.map((item) => (
-        <li class="lg:w-full relative border-0">
+        <li class="hidden lg:inline lg:w-full relative border-0">
           {item?.subItems ? (
             <details class="menu-item">
               <summary class="justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4">
@@ -55,7 +56,7 @@ const {
               href={item.href}
               target={item.target || "_self"}
             >
-              <span class="inline-flex justify-center lg:pl-2">
+              <span class="inline-flex justify-center pl-2">
                 <Icon name={`menu/${item.svg}`} />
               </span>
               <span class="hidden lg:inline ml-2">{item.text}</span>
@@ -70,7 +71,7 @@ const {
       socialIcons.map((item) => (
         <li class="w-full relative border-0">
           {item?.subItems ? (
-            <details class="menu-item">
+            <details class="menu-item" open="">
               <summary class="justify-start items-center text-right text-xl font-bold p-4">
                 <span class="justify-center">
                   <Icon name={`social/${item.svg}`} />
@@ -85,6 +86,7 @@ const {
                     <a
                       tabindex="0"
                       class="menu-item text-right text-xl font-bold p-2"
+                      class:list={`id_${subItem.id}`}
                       id={`header-${subItem.id}`}
                       href={subItem.href}
                       target={subItem.target || "_self"}
@@ -105,6 +107,7 @@ const {
             <a
               tabindex="0"
               class="flex justify-start items-center text-right text-xl font-bold p-2"
+              class:list={`id_${item.id}`}
               id={item.id}
               title={item.id}
               href={item.href}

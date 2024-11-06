@@ -1,0 +1,84 @@
+import BaseLayout from "../layouts/BaseLayout_byte.astro";
+import BaseCard from "../components/BaseCard_byte.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine_byte.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+import ProfileSheet from "../components/page/ProfileSheet.astro";
+
+<BaseLayout title="Clavis" sideCard={ true }>
+  <ProfileSheet
+    items=
+    {[
+      { 
+        img                 :"",
+        svgs:
+        [
+            "profile/byte_"
+          , "profile/byte_"
+        ],
+        about:
+        [
+            { title: "About"
+            , content: "<b>BYTE</b> is a system/device used by IV and Clavis. IV is able to wear the BYTE helmet, allowing Clavis to manifest armour to for IV." }
+          , { title: "Backstory"
+          , content: "?", redacted:false }
+          , { title: "Analysis"
+          , content: "?", redacted:false }
+        ],
+        name:
+        { 
+            first           : "BYTE"
+          , last            : ""
+        },
+        basicDetails:
+        [
+            { title: "", content: "" }
+        ],
+        "personalDetails":
+        [
+            { title: "Gender", content: "inapplicable" }
+          , { title: "Age", content: "inapplicable" }
+          , { title: "Birthday", content: "inapplicable" }
+          , { title: "Height", content: "inapplicable" }
+          , { title: "Weight", content: "inapplicable" }
+          , { title: "Type", content: "Systems" }
+        ],
+        descriptions:
+        [
+          { title:"", content:"", redacted:false }
+        ],
+        "characteristics":
+        {
+            traits          : [ "" ]
+          , enneagram       : [ "" ]
+          , moralAlignment  : [ "" ]
+          , archtype        : [ "" ]
+          , temperment      : [ "" ]
+          , schemata        : [ "" ]
+          , mannerisms      : [ "" ]
+        },
+
+        likes               :[ "" ],
+        dislikes            :[ "" ],
+        languages           :[ "English" ],
+        
+        miscellaneous:
+        [
+            { content: "" }
+        ]
+      }
+    ]}
+  />
+
+  <TimeLine
+    items={[
+      { year: "2024-04-11", event: "Profile Added" },
+    ]}
+  />
+</BaseLayout>

@@ -12,9 +12,12 @@ import SidebarTool_byte from "../components/SidebarTool_byte.astro";
 import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { changeLanguage } from "i18next";
 import type { LinkListData } from "../types";
+import { pathsEqual } from "@utils/url-utils";
 
 changeLanguage("en");
 const { title, image, includeSidebar = true } = Astro.props;
+
+const isHomePage = pathsEqual(Astro.url.pathname, '/');
 
 const {
   showBorder = false,
@@ -48,7 +51,7 @@ const {
   <body>
     <!--Navbar title={SITE_TITLE} /-->
     <div class="max-w-7xl m-auto">
-      <div
+      <div id="swup"
         class="relative grid grid-cols-1 gap-0 p-0 top-0"
       >
         <div

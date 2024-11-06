@@ -49,15 +49,55 @@ export interface LinkListData {
   menu?: boolean;
   linklist?: boolean;
   sideCard?: boolean;
+  hideCard?: boolean;
 }
 
 export interface ProfileData {
-  title?: string;
   img?: string;
-  desc?: string;
-  url?: string;
-  badge?: string;
-  target?: string;
+  svgs?: string[];
+  about?: { title?: string; content?: string; redacted?:boolean; }[];
+  name?: { first?: string; last?: string; };
+
+  basicDetails?: {
+    title?: string;
+    content?: string;
+    redacted?:boolean;
+  }[];
+  personalDetails?: {
+    title?: string;
+    content?: string;
+    redacted?:boolean;
+  }[];
+  descriptions?: {
+    title?: string;
+    content?: string;
+    redacted?:boolean;
+  }[];
+  characteristics?: {
+    traits?: string[];
+    enneagram?: string[];
+    moralAlignment?: string;
+    archtype?: string[];
+    temperment?: string[];
+    schemata?: string[];
+    mannerisms?: string[];
+  }
+
+  likes?: string[];
+  dislikes?: string[];
+  languages?: string[];
+  miscellaneous?: {
+    content?: string;
+    redacted?:boolean;
+  }[];
+
+  media?: {
+    title?: string;
+    content?: string;
+    url?: string;
+    badge?: string;
+    target?: string;
+  }[];
 }
 
 export interface LinkCard {
