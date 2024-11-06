@@ -32,7 +32,7 @@ const {
       </div>
       <a class="id_home" href="/"><div class="font-bold text-3xl font-anta tracking-wider">{USER_NAME}</div></a>
       <div class="text-sm font-saira">{SITE_DESCRIPTION}</div>
-      { linklist ? <Menu linklist={linklist} showBorder={showBorder} /> : <Footer /> }
+      { linklist ? <Menu linklist={linklist} showBorder={showBorder} hideCard={hideCard} /> : <Footer /> }
     </div>
   </div>
   <div class:list={[{"hidden":hideCard}]}>
