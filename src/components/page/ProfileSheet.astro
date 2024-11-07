@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import type { ProfileData } from "../../types";
+import { Markdown } from "@astropub/md";
 
 interface Props {
   items?: ProfileData[];
@@ -55,7 +56,7 @@ const { items } = Astro.props;
                 { item.basicDetails.length > 0 ? item.basicDetails?.map( basic => 
                   <p class="row-span-1 col-span-1 text-[0.8em] font-bold mx-4 mt-2">{basic.title}</p>
                   <p class="row-span-1 col-span-1 text-[0.8em] mx-4 mt-2"
-                    class:list={[{"font-redacted":basic.redacted}]}><slot set:html={basic.content}/></p> ) : "" }
+                    class:list={[{"font-redacted":basic.redacted}]}><Markdown.Inline of={`${basic.content}`}/></p> ) : "" }
                 </div>
                 <div class="w-full grid grid-cols-2 gap-0 mb-2">
                 { item.personalDetails.length > 0 ?
@@ -63,7 +64,7 @@ const { items } = Astro.props;
                 { item.personalDetails.length > 0 ? item.personalDetails?.map( detail => 
                   <p class="row-span-1 col-span-1 text-[0.8em] font-bold mx-4 mt-2">{detail.title}</p>
                   <p class="row-span-1 col-span-1 text-[0.8em] mx-4 mt-2"
-                     class:list={[{"font-redacted":detail.redacted}]}><slot set:html={detail?.content}/></p> ): "" }
+                     class:list={[{"font-redacted":detail.redacted}]}><Markdown.Inline of={`${detail?.content}`}/></p> ): "" }
                 </div>
               </div>
 
@@ -77,7 +78,7 @@ const { items } = Astro.props;
             <div class="border-2 border-slate-500 rounded-lg row-span-1 col-span-2 grow w-full h-full mx-auto">
               <h3 id="heading-2" class="bg-slate-500 text-slate-300 row-span-1 col-span-2 text-center">{abt?.title}</h3>
               <p class="mt-4 mb-2 mx-2 px-2 text-[0.85em]"
-                 class:list={[{"font-redacted":abt.redacted}]}><slot set:html={abt?.content}/></p>
+                 class:list={[{"font-redacted":abt.redacted}]}><Markdown.Inline of={`${abt?.content}`}/></p>
             </div> ) : "" }
           </div> ) : "" }
 
@@ -89,7 +90,7 @@ const { items } = Astro.props;
             <div class="border-2 border-slate-500 rounded-lg row-span-1 grow w-full h-full mx-auto">
               <h3 id="heading-2" class="bg-slate-500 text-slate-300 row-span-1 col-span-2 text-center">{desc?.title}</h3>
               <p class="mt-4 mb-2 mx-2 px-2 text-[0.85em]"
-                 class:list={[{"font-redacted":desc.redacted}]}><slot set:html={desc?.content}/></p>
+                 class:list={[{"font-redacted":desc.redacted}]}><Markdown.Inline of={`${desc?.content}`}/></p>
             </div>
             ) : "" }
           </>
@@ -101,7 +102,7 @@ const { items } = Astro.props;
               { item.miscellaneous.length > 0 ?
               <ul class="mt-4 mb-2 mx-2 text-[0.8em]">
                 { item.miscellaneous?.map( desc =>
-                <li class:list={[{"font-redacted":desc.redacted}]}><slot set:html={desc?.content}/></li>
+                <li class:list={[{"font-redacted":desc.redacted}]}><Markdown.Inline of={`${desc?.content}`}/></li>
                 ) }
               </ul> : "" }
             </div>
