@@ -30,39 +30,39 @@ export const menuItems: MenuItems[] = [
     svg: "about",
     target: "_self",
   },*/
-  { id: "iv", text: "IV", href: "/iv", svg: "blog", target: "_self" }, 
+  /*{ id: "iv", text: "IV", href: "/iv", svg: "blog", target: "_self" }, 
   { id: "clavis", text: "Clavis", href: "/clavis", svg: "blog", target: "_self" }, 
-  { id: "byte", text: "BYTE", href: "/byte", svg: "blog", target: "_self" }, 
-  /*{
+  { id: "byte", text: "BYTE", href: "/byte", svg: "blog", target: "_self" }, */
+  {
     id: "oc_profiles",
     text: "OC Profiles",
-    href: "/profiles",
+    href: "#",
     svg: "blog",
     target: "_self",
     subItems: [
       {
-        id: "iv",
-        text: "IV",
-        href: "/iv",
-        svg: "post",
-        target: "_self",
-      },
-      {
         id: "clavis",
         text: "Clavis",
         href: "/clavis",
-        svg: "post",
+        svg: "blog",
+        target: "_self",
+      },
+      {
+        id: "iv",
+        text: "IV",
+        href: "/iv",
+        svg: "blog",
         target: "_self",
       },
       {
         id: "byte",
-        text: "BYTE Device",
+        text: "BYTE",
         href: "/byte",
-        svg: "post",
+        svg: "blog",
         target: "_self",
       },
     ],
-  }, */ // Blog page with sub-items
+  }, // Blog page with sub-items
   /*{
     id: "contact",
     text: "Contact",

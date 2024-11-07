@@ -87,8 +87,12 @@ const {
   document.querySelectorAll("#dropdown > ul > li").forEach((item) => {
     item.addEventListener("click", function () {
       const dropdown = document.getElementById("dropdown") as HTMLElement;
-      if (dropdown.hasAttribute("open")) {
-        dropdown.removeAttribute("open");
+      if (dropdown.hasAttribute("open"))
+      {
+        if( !item.getElementsByClassName("menu-cat") )
+        {
+          dropdown.removeAttribute("open");
+        }
       }
     });
   });
