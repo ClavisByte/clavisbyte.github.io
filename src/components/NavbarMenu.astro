@@ -16,7 +16,7 @@ const {
           <details class="menu-item" open="">
               <summary class="justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4">
 
-                <span class="hidden lg:inline ml-2">{item.text}</span>
+                <span class="inline ml-2">{item.text}</span>
               </summary>
               <ul>
                 {item.subItems?.map((subItem) => (
@@ -29,7 +29,7 @@ const {
                       target={subItem.target || "_self"}
                       aria-label={subItem.text}>
 
-                      <span class="hidden lg:inline ml-2">{subItem.text}</span>
+                      <span class="inline ml-2">{subItem.text}</span>
                     </a>
                   </li>
                 ))}
