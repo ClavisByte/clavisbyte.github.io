@@ -13,8 +13,8 @@ export const DATE_FORMAT = "ddd MMM DD YYYY";
 export const USER_NAME = "B Y T E";
 export const USER_SITE = "https://clavisbyte.link"
 export const USER_AVATAR = "/profile.png";
-export const BRAND_LOGO = "logo/byte_o";
-export const BRAND_LOGO_SUB = "logo/byte_b";
+export const BRAND_LOGO = "logo/emb_o";
+export const BRAND_LOGO_SUB = "logo/emb_b";
 
 // Server and transition settings
 export const SERVER_URL = "https://clavisbyte.link";
